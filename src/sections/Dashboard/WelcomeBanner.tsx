@@ -101,8 +101,6 @@ const Welcome = styled.div`
 
 export function WelcomeBanner() {
   return (
-    export function WelcomeBanner() {
-      return (
         <Welcome>
           <div>
             <h1>Welcome to YKD games ran with Gamba v2 👋</h1>

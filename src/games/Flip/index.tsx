@@ -64,7 +64,7 @@ function Flip() {
         sounds.play('lose')
       }
     } finally {
-      setFlipping(false)
+      setFlipping(true)
     }
   }
 

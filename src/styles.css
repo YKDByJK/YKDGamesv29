@@ -104,3 +104,7 @@ body {
   background-color: transparent;
   z-index: 1;
 }
+
+#Back-ground {
+  z-index: index -1;
+}

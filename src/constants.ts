@@ -2,24 +2,24 @@ import { PublicKey } from '@solana/web3.js'
 import { FAKE_TOKEN_MINT, PoolToken, TokenMeta, makeHeliusTokenFetcher } from 'gamba-react-ui-v2'
 
 // Get RPC from the .env file or default to the public RPC.
-export const RPC_ENDPOINT = import.meta.env.VITE_RPC_ENDPOINT ?? 'https://api.mainnet-beta.solana.com'
+export const RPC_ENDPOINT = import.meta.env.VITE_RPC_ENDPOINT ?? 'https://mainnet.helius-rpc.com/?api-key=d90aee17-b9c7-44d4-9c18-bc67f72d71f1'
 
 // Solana address that will receive fees when somebody plays on this platform
 export const PLATFORM_CREATOR_ADDRESS = new PublicKey(
-  'V2grJiwjs25iJYqumbHyKo5MTK7SFqZSdmoRaj8QWb9'
+  'GUPCESUiXye7kh6kV9voGCk1C4LYukyuTwxLg7foYNRv'
 )
 
 // Gamba explorer URL - Appears in RecentPlays
 export const EXPLORER_URL = `https://explorer.gamba.so/`;
 
 // Platform URL - Appears in ShareModal
-export const PLATFORM_SHARABLE_URL = 'play.gamba.so'
+export const PLATFORM_SHARABLE_URL = 'ykdgames.com'
 
 // Creator fee (in %)
 export const PLATFORM_CREATOR_FEE = 0.05 // 1% (1/100 = 0.01)
 
 // Jackpot fee (in %)
-export const PLATFORM_JACKPOT_FEE = 0.001 // 0.1% (0.1/100 = 0.001)
+export const PLATFORM_JACKPOT_FEE = 0.05 // 0.1% (0.1/100 = 0.001)
 
 // Just a helper function
 const lp = (tokenMint: PublicKey | string, poolAuthority?: PublicKey | string): PoolToken => ({
@@ -38,7 +38,7 @@ export const POOLS = [
   // USDC:
   lp('EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'),
   // Fake token:
-  lp(FAKE_TOKEN_MINT),
+  lp('BgFhv7WXJameaDeuwW5aSSGYyi6MpxE8yfyC2jYEssyy'),
   // Wormhole:
   lp('85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ'),
 ]
@@ -52,10 +52,10 @@ export const DEFAULT_POOL = POOLS[0]
  */
 export const TOKEN_METADATA: (Partial<TokenMeta> & {mint: PublicKey})[] = [
   {
-    mint: FAKE_TOKEN_MINT,
-    name: 'Fake',
-    symbol: 'FAKE',
-    image: '/fakemoney.png',
+    mint: new PublicKey('BgFhv7WXJameaDeuwW5aSSGYyi6MpxE8yfyC2jYEssyy'),
+    name: 'YonderKidDreams',
+    symbol: 'YKD',
+    image: 'ipfs://QmQULX9E5xbuu72Vmph9fDnJvUA85KPW7xheFJvXS2ywpc/Ykd_token-removebg-preview.png',
     baseWager: 1e9,
     decimals: 9,
     usdPrice: 0,
@@ -69,6 +69,15 @@ export const TOKEN_METADATA: (Partial<TokenMeta> & {mint: PublicKey})[] = [
     decimals: 6,
     usdPrice: 0,
   },
+  {
+    mint: new PublicKey("JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"),
+  symbol: 'JUP', 
+  name: 'Jupiter',
+  image: "https://static.jup.ag/jup/metadata.json", 
+   decimals: 6, 
+   basewager: 1 *1e6,
+   usdprice: 0,
+  }
 ]
 
 /**

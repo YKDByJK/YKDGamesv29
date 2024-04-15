@@ -11,7 +11,7 @@ import { useUserStore } from '../../hooks/useUserStore'
 import { GameSlider } from '../Dashboard/Dashboard'
 import { Container, Controls, IconButton, Screen, Splash } from './Game.styles'
 import { ProvablyFairModal } from './ProvablyFairModal'
-// import { TransactionModal } from './TransactionModal'
+import { TransactionModal } from './TransactionModal'
 
 function CustomError() {
   return (

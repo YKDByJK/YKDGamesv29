@@ -82,7 +82,7 @@ export const TOKEN_METADATA: (Partial<TokenMeta> & {mint: PublicKey})[] = [
 
 /**
  * A method for automatically fetching Token Metadata.
- * Here we create a fetcher that uses Helius metadata API, if an API key exists as an environment variable.
+ * Here we create a fetcher that uses Helius m0etadata API, if an API key exists as an environment variable.
  */
 export const TOKEN_METADATA_FETCHER = (
   () => {

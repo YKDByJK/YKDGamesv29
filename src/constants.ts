@@ -1,14 +1,14 @@
 import { PublicKey } from '@solana/web3.js'
-import { FAKE_TOKEN_MINT, PoolToken, TokenMeta, makeHeliusTokenFetcher } from 'gamba-react-ui-v2'
+import { PoolToken, TokenMeta, makeHeliusTokenFetcher } from 'gamba-react-ui-v2'
 
 // Get RPC from the .env file or default to the public RPC.
-export const RPC_ENDPOINT = import.meta.env.VITE_RPC_ENDPOINT ?? 'https://mainnet.helius-rpc.com/?api-key=d90aee17-b9c7-44d4-9c18-bc67f72d71f1'
+export const RPC_ENDPOINT = import.meta.env.VITE_RPC_ENDPOINT ?? 'https://mainnet.helius-rpc.com/?api-key=7b99c32d-a41e-4409-bb2d-c1b278627ef4'
 
 // Solana address that will receive fees when somebody plays on this platform
 export const PLATFORM_CREATOR_ADDRESS = new PublicKey(
-  'GUPCESUiXye7kh6kV9voGCk1C4LYukyuTwxLg7foYNRv'
+  'HvX1mNoVH7EaqB6KDdgzsHageuNBvbgrpPvnNcEpcTva'
 )
-
+//maybe
 // Gamba explorer URL - Appears in RecentPlays
 export const EXPLORER_URL = `https://explorer.gamba.so/`;
 

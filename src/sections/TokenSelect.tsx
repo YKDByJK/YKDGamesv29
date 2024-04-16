@@ -67,7 +67,7 @@ export default function TokenSelect() {
     context.setPool(pool.token, pool.authority)
     setVisible(false)
     if (
-      import.meta.env.VITE_REAL_PLAYS_DISABLED &&
+      import.meta.env.VITE_REAL_PLAYS_ENABLED &&
       !pool.token.equals(FAKE_TOKEN_MINT)
     ) {
       setWarning(true)
@@ -82,9 +82,9 @@ export default function TokenSelect() {
     <>
       {warning && (
         <Modal>
-          <h1>Real plays disabled</h1>
+          <h1>Real plays enabled</h1>
           <p>
-            This platform only allows you to play with fake tokens.
+        
           </p>
           <GambaUi.Button
             main

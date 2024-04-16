@@ -11,7 +11,7 @@ import { useUserStore } from '../../hooks/useUserStore'
 import { GameSlider } from '../Dashboard/Dashboard'
 import { Container, Controls, IconButton, Screen, Splash } from './Game.styles'
 import { ProvablyFairModal } from './ProvablyFairModal'
-// import { TransactionModal } from './TransactionModal'
+import { TransactionModal } from './transactionModal'
 
 function CustomError() {
   return (
@@ -126,12 +126,12 @@ function CustomRenderer() {
   const { game } = GambaUi.useGame()
   const [info, setInfo] = React.useState(false)
   const [provablyFair, setProvablyFair] = React.useState(false)
-  // const [txModal, setTransactionModal] = React.useState(false)
+  const [txModal, setTransactionModal] = React.useState(false)
   const audioStore = useGambaAudioStore()
   const firstTimePlaying = useUserStore((state) => !state.gamesPlayed.includes(game.id))
   const markGameAsPlayed = useUserStore((state) => () => state.markGameAsPlayed(game.id, true))
   const [ready, setReady] = React.useState(false)
-  // const loading = useLoadingState()
+  const loading = useLoadingState()
 
   React.useEffect(
     () => {
@@ -174,9 +174,9 @@ function CustomRenderer() {
       {provablyFair && (
         <ProvablyFairModal onClose={() => setProvablyFair(false)} />
       )}
-      {/* {txModal && (
+      {txModal && (
         <TransactionModal onClose={() => setTransactionModal(false)} />
-      )} */}
+      )} 
       <Container>
         <Screen>
           <Splash>
@@ -194,13 +194,13 @@ function CustomRenderer() {
         <Controls>
           <div style={{ display: 'flex', gap: '10px' }}>
             <div style={{ display: 'flex' }}>
-              {/* <IconButton onClick={() => setTransactionModal(true)}>
+              { <IconButton onClick={() => setTransactionModal(true)}>
                 {loading === -1 ? (
                   <Icon.Shuffle />
                 ) : (
                   <Spinner />
                 )}
-              </IconButton> */}
+              </IconButton> }
               <IconButton onClick={() => setInfo(true)}>
                 <Icon.Info />
               </IconButton>
